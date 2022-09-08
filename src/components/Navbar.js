@@ -2,24 +2,29 @@
 //const [ navbarOpen, setNavbarOpen ] = useState(true); /* then import them */
 /* just copy Navbar from https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars */   
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState, Fragment } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'; //ama bo active boni page aka bakar denin
 
-
-const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'Products', href: '/Products', current: false },
-  { name: 'Categories', href: '/Categories', current: false },
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
+  const location = useLocation();
+
+   const [navigation, setNavigation] = useState([
+   // const navigation = [
+    { name: 'Home', href: '/', current: true },
+    { name: 'Products', href: '/Products', current: false },
+    { name: 'Categories', href: '/Categories', current: false },
+  //]
+  ]); 
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -52,14 +57,15 @@ export default function Navbar() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigation.map((item, index) => (
                       <Link  /* change a to Link  bo swich between page without refresh*/
 
                         key={item.name}
                         to={item.href} /* change href for to */
                         className={classNames(
-                          item.current 
-                          ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                         location.pathname === item.href /* ama bo active boni pageakana ka click man krd */
+                          ? 'bg-indigo-900 text-white' 
+                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -73,7 +79,7 @@ export default function Navbar() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="bg-indigo-600 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500"
+                  className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500"
                 >
                   <span className="sr-only">View notifications</span>
                   Login
@@ -147,7 +153,8 @@ export default function Navbar() {
                   as={Link}  /* change a to Link */
                   to={item.href} /* change href for to */
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    location.pathname === item.href
+                    ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
