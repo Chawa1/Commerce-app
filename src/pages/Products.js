@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import MainLayout from '../layouts/MainLayout';
 
-const Products = () => {
+export default function Products() {
   return (
-    <div>Products</div>
+
+    <MainLayout>Products</MainLayout>
+
   )
 }
-
-export default Products

@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import MainLayout from '../layouts/MainLayout';
 
 const Categories = () => {
   return (
-    <div>Categories</div>
+  <MainLayout>Categories</MainLayout>
   )
 }
 

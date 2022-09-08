@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import MainLayout from '../layouts/MainLayout';
 
-const Home = () => {
+export default function Home () {
   return (
-    <div>Home</div>
+    <MainLayout>Home</MainLayout> /* main layout tanha wshai home ii tayaya */
   )
 }
-
-export default Home
