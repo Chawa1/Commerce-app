@@ -1,6 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Login() {
+
+  const [form, setForm] = useState({});
+
+function submitHandler(e){
+  e.preventDefault();
+alert(JSON.stringify(form));
+}
+
+function onChangeHandler(event){
+  const name = event.target.name;
+  const value = event.target.value;
+  setForm((values) => ({...values, [name]: value}))
+
+  console.log(form);
+
+}
+
   return (
 /* basic form  have: Title, Email/userName, Password, Submit Button */
 
@@ -10,20 +27,34 @@ export default function Login() {
       <div className='container mx-auto flex items-center justify-center'>
 
     <div className='bg-white p-10 rounded-lg shadow-xl w-96'>
-      <form className='grid grid-cols-1'>
+      <form className='grid grid-cols-1 ' onSubmit={submitHandler}>
       <h2 className='text-center mb-5 text-2xl font-bold'> Login Page </h2>
 
       <label
       htmlFor="username"> UserName</label> {/* htmlFor="username" boi ka click man la label aka krd input aka active bet */}
-      <input className='bg-gray-100 rounded-md mb-3 '
-       type="text" name="username" id="username" />
+      <input 
+      className='bg-gray-100 rounded-md mb-3 '
+       type="text" 
+       name="username" 
+       id="username" 
+       value={form.username || ''}
+       onChange={onChangeHandler}
+       />
        
       <label htmlFor='password'>Password</label>
-      <input className='bg-gray-100 rounded-md '
-      type="text" name="password" id="password" />
+      <input 
+      className='bg-gray-100 rounded-md '
+      type="text" 
+      name="password" 
+      id="password" 
+      value={form.password || ''}
+    onChange={onChangeHandler}
+      />
       <br/>
 
-      <button className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500">
+      <button 
+      type='submit'
+      className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500">
         Login</button>
 
         <div className='mt-5 text-sm text-gray-500 '>

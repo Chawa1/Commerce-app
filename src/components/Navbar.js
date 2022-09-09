@@ -2,12 +2,14 @@
 //const [ navbarOpen, setNavbarOpen ] = useState(true); /* then import them */
 /* just copy Navbar from https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars */   
 /* This example requires Tailwind CSS v2.0+ */
-import { useState, Fragment } from 'react';
+import { useState, Fragment , useEffect} from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'; //ama bo active boni page aka bakar denin
+
+import {useSelector, useDispatch} from 'react-redux'; /*  */
 
 
 function classNames(...classes) {
@@ -17,6 +19,9 @@ function classNames(...classes) {
 export default function Navbar() {
   const location = useLocation();
 
+  const auth = useSelector((state) => state.auth.isAuthenticated); /*  */
+
+
    const [navigation, setNavigation] = useState([
    // const navigation = [
     { name: 'Home', href: '/', current: true },
@@ -25,8 +30,14 @@ export default function Navbar() {
   //]
   ]); 
 
+
+  useEffect( ()=>{
+console.log('the state of auth is false');
+  }, [])
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
+
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -77,14 +88,25 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <Link  /* button aka akain ba Link */
+                
+                {auth ? <Link  /* button aka akain ba Link */
                   to='/login' /* ka click man lekrd bman bat bo page Login */
                   className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500"
                 >
                   <span className="sr-only">View notifications</span>
-                  Login
+                  Logout {/* agar daxl bbo allet logout */}
                  {/*  <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
-                </Link>
+                </Link> : 
+                <Link  /* button aka akain ba Link */
+                to='/login' /* ka click man lekrd bman bat bo page Login */
+                className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500"
+              >
+                <span className="sr-only">View notifications</span>
+                Login {/* agal daxl nabbo allet login bka  */}
+               {/*  <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
+              </Link>}
+                
+                
 
                 {/* Profile dropdown */}
                 {/* <Menu as="div" className="relative ml-3">
