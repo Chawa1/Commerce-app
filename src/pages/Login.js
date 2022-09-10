@@ -1,18 +1,32 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+
+import {login} from '../app/slices/authSlice'; //aw satte ai ka la global store hamana (login a) actionakai
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+const dispatch = useDispatch();
+const navigate = useNavigate();
+const [form, setForm] = useState({});
 
-  const [form, setForm] = useState({});
 
 function submitHandler(e){
   e.preventDefault();
-alert(JSON.stringify(form));
+//alert(JSON.stringify(form));
+
+//make pull request to the /login API endpoint
+//if success => JWT token is returned
+dispatch(login(form.username));
+navigate('/', { replace: true});
+
+//if reject => error telling  you what's going on (username Doesn't Exist) 
+
 }
 
 function onChangeHandler(event){
   const name = event.target.name;
   const value = event.target.value;
-  setForm((values) => ({...values, [name]: value}))
+  setForm((values) => ({...values, [name]: value}));
 
   console.log(form);
 
@@ -68,6 +82,6 @@ function onChangeHandler(event){
     </div>
     
     </div>
-  )
+  );
 }
 

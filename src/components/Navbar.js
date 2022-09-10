@@ -32,7 +32,7 @@ export default function Navbar() {
 
 
   useEffect( ()=>{
-console.log('the state of auth is false');
+//console.log('the state of auth is false');
   }, [])
 
   return (
