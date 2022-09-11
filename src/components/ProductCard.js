@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 export default function ProductCard({ product }) {
   return ( 
-  <Link to={`/products/${product.id}`} className='col-span-3 bg-white p-4 '>  
+  <Link to={`/products/${product.id}`} className='rounded-lg bg-white p-4 '>  
   
   <img 
   src={product.image} 
@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
   className='h-60 w-full object-contain'/> {/* object-contain boi product aka hamwi darkawet */}
   <h2 className='text-l font-medium mt-6 mb-6'> {delimiter(product.title, 30)}</h2>
   <p className='text-base text-gray-500  '> 
-  {delimiter(product.description, 60)}
+  {delimiter(product.description, 70)}
   </p>
 
   {/* ama bo bashi xwaraway cartakaya price w jorakai */}
