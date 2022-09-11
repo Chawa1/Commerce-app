@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 export default function ProductCard({ product }) {
   return ( 
-  <Link to={'/products/${product.id}'} className='col-span-3 bg-white p-4 '>  
+  <Link to={`/products/${product.id}`} className='col-span-3 bg-white p-4 '>  
   
   <img 
   src={product.image} 
@@ -17,7 +17,7 @@ export default function ProductCard({ product }) {
 
   {/* ama bo bashi xwaraway cartakaya price w jorakai */}
   <div className='flex justify-between mt-8'>
-<p className='text-xl text-green-700 '>40$</p>
+<p className='text-xl text-green-700 '>{product.price}$</p>
 
 <button className='border border-indigo-600 rounded-xl text-indigo-600 text-xs p-1'>{product.category.toUpperCase()}</button>
 

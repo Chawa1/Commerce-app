@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
+//import RatingStars from '../components/RatingStars';
+import Rating from 'react-rating';
 
 
 export default function Product() {
@@ -40,12 +42,22 @@ export default function Product() {
   {product.description}
   </p>
 
+
+  {/* for rating star */}
+<div>
+  <Rating initialRating={product.rating.rate}/>
+{/* <RatingStars rating = {Math.floor(product.rating.rate)} /> */}
+</div>
+
+
+
+
   {/* ama bo bashi xwaraway cartakaya price w jorakai */}
   <div className='flex justify-between mt-8'>
-<p className='text-xl text-green-700 '>40$</p>
+<p className='text-xl text-green-700 '>{product.price}$</p>
 
 <button className='border border-indigo-600 rounded-xl text-indigo-600 text-xs p-1'>
-  {product.category.toUpperCase()}
+  {product.category && product.category.toUpperCase()}
   </button>
   </div>
 </div>
