@@ -86,14 +86,19 @@ export default function Navbar() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
-                {auth ? <Link  /* button aka akain ba Link */
+              {auth ? 
+
+                <Link  /* button aka akain ba Link */
                   to='/login' /* ka click man lekrd bman bat bo page Login */
-                  className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500"
+                  className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none 
+                  focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500" 
                 >
                   <span className="sr-only">View notifications</span>
                   Logout {/* agar daxl bbo allet logout */}
                 
-                </Link> : 
+                </Link> :
+              
+
                 <Link  /* button aka akain ba Link */
                 to='/login' /* ka click man lekrd bman bat bo page Login */
                 className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500"

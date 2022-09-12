@@ -4,6 +4,7 @@ const initialState = {
 isAuthenticated: false, /* falce wata agar authentication ii nabo allet login bka */
 role: '',
 username: '',
+userId: 3,
 };
 
 //state.auth.role

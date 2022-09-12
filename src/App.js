@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import { Routes, Route } from 'react-router-dom';  /* add dyanamic routing */
 
 import Navbar from './components/Navbar';
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css';  
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -12,8 +14,25 @@ import Register from './pages/Register';
 import Products from './pages/Products';
 import Product from './pages/Product';
 import Categories from './pages/Categories';
+import { login } from './app/slices/authSlice';
+import { useDispatch } from 'react-redux';
+import {updateCart} from './app/slices/cartSlice';
+
+
 
 function App() {
+const dispatch = useDispatch();
+
+useEffect(() => {
+  const username = localStorage.getItem('username');
+  if(username){
+    dispatch(login(username));
+  }
+  
+}, []);
+
+
+
   return (
     <div>
 <Routes>  
