@@ -6,7 +6,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'; //ama bo active boni page aka bakar denin
 
+
 import {useSelector, useDispatch} from 'react-redux'; /*  */
+
+import i18n from "i18next";
 
 
 function classNames(...classes) {
@@ -58,7 +61,7 @@ export default function Navbar() {
                     alt="Your Company"
                   />
                   <img
-                    className="hidden h-8 w-auto lg:block"
+                    className="hidden h-8 w-auto lg:block "
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
                   />
@@ -86,6 +89,49 @@ export default function Navbar() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
+
+ <button className='text-white mx-1'
+                  onClick={() => {
+                    i18n.changeLanguage('ku');
+                    localStorage.setItem('language', 'ku');
+                  }}
+                >
+                  Kurdish
+                </button>
+
+
+<button className='text-white mx-1'
+onClick={()=> {
+i18n.changeLanguage('ar');
+localStorage.setItem('language', 'ku');
+}}
+>
+Arabic</button>
+
+<button className='text-white mx-1'
+onClick={()=>{ 
+i18n.changeLanguage('en');
+localStorage.setItem('language', 'ku');
+}}
+> English</button>
+
+
+<svg  //ama icon ii shoping akaya
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-7 w-10 text-white mr-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+
+
               {auth ? 
 
                 <Link  /* button aka akain ba Link */
