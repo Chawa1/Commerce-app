@@ -27,6 +27,7 @@ export default function Navbar() {
     { name: 'Products', href: '/Products', current: false },
     { name: 'Categories', href: '/Categories', current: false },
     { name: 'Feedback', href: '/Feedback', current: false },
+    { name: 'Form', href: '/Form', current: false },
 
   //]
   ]); 

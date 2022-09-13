@@ -19,6 +19,7 @@ import { useDispatch } from 'react-redux';
 import {updateCart} from './app/slices/cartSlice';
 
 import Feedback from './pages/Feedback';
+import Form from './pages/Form';
 
 
 
@@ -47,6 +48,7 @@ useEffect(() => {
 <Route path="categories" element={<Categories />}/>
 <Route path="products/:id" element={<Product />}/>  {/* to crate dynamic api for each single product */}
 <Route path="feedback" element={<Feedback />}/>
+<Route path="form" element={<Form />}/>
  
 </Routes>
     </div>
