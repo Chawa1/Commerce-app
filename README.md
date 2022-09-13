@@ -4,3 +4,4 @@ npm i react-responsive-carousel
 npm install --save react-rating
 npm install react-i18next i18next --save
 npm i --save react-select
+npm i react-paginate

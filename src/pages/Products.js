@@ -8,6 +8,8 @@ import ProductsList from '../components/ProductsList';
 
 import LoadingSpinner from '../components/LoadingSpinner';
 
+import ReactPaginate from 'react-paginate';
+
 export default function Products( ) {
 
   const [products, setProducts] = useState([]); //katek ka la api datakan garayawa lerada save' store akain 
@@ -40,6 +42,8 @@ export default function Products( ) {
     {/*   {JSON.stringify(products)}  */}
 
     <ProductsList products = {products}/>
+
+    {/* add paginate component */}
     </MainLayout>
 
   )
