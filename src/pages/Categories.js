@@ -11,13 +11,29 @@ const options = [
   { value: 'blackberry', label: 'Blackberry' },
 ]; 
 
-const Categories = () => {
+export default function Categories() {
+
+  function handleUpload(e){
+console.log('the uploaded file object is:', e.target.files);
+if(e.target.files.length >2){
+  alert('please chose one file only');
+}
+
+  }
+
+
   return (
   <MainLayout >
-    <ReactModal/>
-    <Select options={options} />   {/* isMulti='true' */}
+ {/*   <ReactModal/>
+     <Select options={options} /> */}   {/* isMulti='true' */}
+     <label>uploaded Your cv</label>
+     <br/>
+    <input multiple type="file" name="file" onChange={handleUpload} />
+    <br/>
+    <label>uploaded Your coveLetter</label>
+     <br/>
+    <input multiple type="file" name="file" onChange={handleUpload} />
+
   </MainLayout>
   )
 }
-
-export default Categories
