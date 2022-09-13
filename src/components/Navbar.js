@@ -23,10 +23,11 @@ export default function Navbar() {
 
 
    const [navigation, setNavigation] = useState([
-   // const navigation = [
     { name: 'Home', href: '/', current: true },
     { name: 'Products', href: '/Products', current: false },
     { name: 'Categories', href: '/Categories', current: false },
+    { name: 'Feedback', href: '/Feedback', current: false },
+
   //]
   ]); 
 

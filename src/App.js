@@ -18,6 +18,8 @@ import { login } from './app/slices/authSlice';
 import { useDispatch } from 'react-redux';
 import {updateCart} from './app/slices/cartSlice';
 
+import Feedback from './pages/Feedback';
+
 
 
 function App() {
@@ -44,7 +46,8 @@ useEffect(() => {
 <Route path="products" element={<Products />}/>
 <Route path="categories" element={<Categories />}/>
 <Route path="products/:id" element={<Product />}/>  {/* to crate dynamic api for each single product */}
-  {/* <Route path="product" element={<Product />}/>   */}
+<Route path="feedback" element={<Feedback />}/>
+ 
 </Routes>
     </div>
     );
