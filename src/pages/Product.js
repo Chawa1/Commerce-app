@@ -4,6 +4,51 @@ import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 //import RatingStars from '../components/RatingStars';
 import Rating from 'react-rating';
+import MainLayout from '../layouts/MainLayout';
+
+
+import {EmailIcon, FacebookIcon, FacebookMessengerIcon, HatenaIcon, InstapaperIcon,
+  LineIcon,
+  LinkedinIcon,
+  LivejournalIcon,
+  MailruIcon,
+  OKIcon,
+  PinterestIcon,
+  PocketIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  ViberIcon,
+  VKIcon,
+  WeiboIcon,
+  WhatsappIcon,
+  WorkplaceIcon
+} from "react-share";
+
+
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton
+} from "react-share";
+
 
 
 const yellowStar = (
@@ -61,7 +106,19 @@ export default function Product() {
   }
 
   return(
-     <div className='containet mx-auto grid grid-cols-2 divide-x-2  border-red-500 bg-white py-10 '>
+    <MainLayout>
+{/* 
+<button  //for controling dark mode
+onClick={() => document.documentElement.classList.add('dark')}>
+        dark 
+      </button>
+
+      <button className='ml-2 mt-1' //for controling dark mode
+onClick={() => document.documentElement.classList.remove('dark')}>
+      light
+      </button> */}
+
+     <div className='containet mx-auto grid grid-cols-2 divide-x-2  border-red-500 bg-white dark:bg-gray-800 dark:text-gray-100 py-10 '>
 
 
 <div className='px-10' > {/* left side */}
@@ -95,6 +152,31 @@ export default function Product() {
   {product.category && product.category.toUpperCase()}
   </span>
   </div>
+
+{/* for adding social media link */}
+<div>
+  <TwitterShareButton 
+   url={window.location.href}
+   title="example title" 
+   via="weCode"
+   hashtags={['wecode', 'javaScript' ]}>
+    {' '}
+  <TwitterIcon size={32} round={true} />
+  </TwitterShareButton>
+
+<LineShareButton 
+url={window.location.href}>
+  <LinkedinIcon size={32} round={true}/>
+</LineShareButton>
+
+<FacebookShareButton 
+url={window.location.href}>
+  <FacebookIcon size={32} round={true}/>
+</FacebookShareButton>
+
+
+</div>
+
 </div>
 
 <div className='px-10'>
@@ -102,6 +184,8 @@ export default function Product() {
   </div>
 
      </div> 
+
+     </MainLayout>
      
   );
   
