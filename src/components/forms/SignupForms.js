@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import axios from 'axios';
-//import * as Yup from 'yup';
+//import axios from 'axios';
+import * as Yup from 'yup';
 
 export default function SignupForms() {
     const formik = useFormik({
@@ -12,7 +12,7 @@ export default function SignupForms() {
 
         validationSchema: Yup.object({ //just copy the code after installed and imported yup
             username: Yup.string()
-              .max(15, 'Must be 15 characters or less')
+              .max(15, 'Must be 15 characters or less') //you can change this condition 
       
               .required('Username is Required'),
             email: Yup.string()
@@ -39,7 +39,7 @@ export default function SignupForms() {
 
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit}> {/* just copy the code then create your own form  */}
    
    <label htmlFor="username">Username</label>
       <input
@@ -49,8 +49,8 @@ export default function SignupForms() {
         required
         {...formik.getFieldProps('username')}
       />
-      {formik.errors.username ? (
-        <p className="text-red-500"> {formik.errors.username}</p>
+      {formik.errors.username ? ( //if there is an error
+        <p className="text-red-500"> {formik.errors.username}</p> //then show the errow in a paragraph
       ) : null}
       <label htmlFor="email">Email Address</label>
       <input
