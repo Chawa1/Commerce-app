@@ -16,3 +16,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: rgb(230, 230, 230);
+}
+
+
+.map-container {
+  height: 750px;
+  width: 750px;
+}

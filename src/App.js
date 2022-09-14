@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 
+import './App.css';
+
 import { Routes, Route } from 'react-router-dom';  /* add dyanamic routing */
 
 import Navbar from './components/Navbar';
@@ -20,6 +22,7 @@ import {updateCart} from './app/slices/cartSlice';
 
 import Feedback from './pages/Feedback';
 import Form from './pages/Form';
+
 
 
 
@@ -48,7 +51,6 @@ useEffect(() => {
 <Route path="categories" element={<Categories />}/>
 <Route path="products/:id" element={<Product />}/>  {/* to crate dynamic api for each single product */}
 <Route path="feedback" element={<Feedback />}/>
-<Route path="form" element={<Form />}/>
  
 </Routes>
     </div>

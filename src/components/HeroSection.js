@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactCarousel from './ReactCarousel';
 import { useTranslation } from 'react-i18next';
+import Products from '../pages/Products';
 
 export default function HeroSection() {
   const { t, i18n } = useTranslation('common');
@@ -34,7 +35,8 @@ export default function HeroSection() {
 
 
       <div className="mt-10">
-        <button className="shadow-md hover:shadow-lg bg-indigo-900 text-white px-6 py-4 rounded-lg text-xl font-semibold mr-4">
+        <button
+        className="shadow-md hover:shadow-lg bg-indigo-900 text-white px-6 py-4 rounded-lg text-xl font-semibold mr-4">
           View Products
         </button>
         <button className="shadow-md hover:shadow-lg bg-white text-indigo-900 px-6 py-4 rounded-lg text-xl font-semibold">

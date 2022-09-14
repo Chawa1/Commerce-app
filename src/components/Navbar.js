@@ -28,6 +28,7 @@ export default function Navbar() {
     { name: 'Categories', href: '/Categories', current: false },
     { name: 'Feedback', href: '/Feedback', current: false },
     { name: 'Form', href: '/Form', current: false },
+    { name: 'About', href: '/About', current: false },
 
   //]
   ]); 
@@ -134,7 +135,7 @@ localStorage.setItem('language', 'ku');
                       </svg>
 
 
-              {auth ? 
+              {auth.isAuthenticated ? 
 
                 <Link  /* button aka akain ba Link */
                   to='/login' /* ka click man lekrd bman bat bo page Login */

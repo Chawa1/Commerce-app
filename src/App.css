@@ -1,4 +1,18 @@
-.App {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgb(230, 230, 230);
+}
+
+.map-container {
+  height: 100px;
+  width: 100px;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -38,4 +52,4 @@
   100% {
     transform: translateY(0px);
   }
-}
+} */

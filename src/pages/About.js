@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import MainLayout from '../layouts/MainLayout';
+import LeafletMap from '../components/LeafletMap';
 
-const About = () => {
+export default function About() {
   return (
-    <div>About</div>
-  )
+    <MainLayout>
+    About
+    <LeafletMap />
+  </MainLayout>
+  );
 }
-
-export default About
