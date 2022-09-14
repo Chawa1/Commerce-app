@@ -107,7 +107,7 @@ export default function Product() {
 
   return(
     <MainLayout>
-{/* 
+
 <button  //for controling dark mode
 onClick={() => document.documentElement.classList.add('dark')}>
         dark 
@@ -116,7 +116,7 @@ onClick={() => document.documentElement.classList.add('dark')}>
       <button className='ml-2 mt-1' //for controling dark mode
 onClick={() => document.documentElement.classList.remove('dark')}>
       light
-      </button> */}
+      </button> 
 
      <div className='containet mx-auto grid grid-cols-2 divide-x-2  border-red-500 bg-white dark:bg-gray-800 dark:text-gray-100 py-10 '>
 
