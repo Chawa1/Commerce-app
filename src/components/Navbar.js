@@ -2,13 +2,12 @@
 import { useState, useEffect} from 'react';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { logout } from '../app/slices/authSlice';
 
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'; //ama bo active boni page aka bakar denin
 
 
-import {useSelector, useDispatch} from 'react-redux'; /*  */
+import {useSelector} from 'react-redux'; /*  */
 
 import i18n from "i18next";
 
@@ -20,8 +19,6 @@ function classNames(...classes) {
 export default function Navbar() {
   const location = useLocation();
   const auth = useSelector((state) => state.auth); /*  */
-  const dispatch = useDispatch();
-
 
    const [navigation] = useState([
     { name: 'Home', href: '/', current: true },
