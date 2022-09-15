@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useEffect } from 'react';
 
  export default function LeafletMap() {
-    const position=[51, 505, -0.9];
+   // const position=[51, 505, -0.9];
      
     
     useEffect(() => {
@@ -13,10 +13,10 @@ import { useEffect } from 'react';
       }, []);  
 
   return (
-    <div className="h-96 w-96 container mx-auto mt-12">
+    <div className="h-96 w-96 container mx-auto mt-12"> 
     <MapContainer
       center={[36.19125374221944, 44.00914381197795]}
-      zoom={10}
+      zoom={3}
       style={{ height: '100%', width: 'auto' }}
     >
       <TileLayer
@@ -28,7 +28,7 @@ import { useEffect } from 'react';
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
-      {/* <LocationMarker /> */}
+    {/*    <LocationMarker />  */}
     </MapContainer>
   </div>
   );

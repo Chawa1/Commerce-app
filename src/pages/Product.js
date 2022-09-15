@@ -2,52 +2,13 @@ import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
-//import RatingStars from '../components/RatingStars';
 import Rating from 'react-rating';
 import MainLayout from '../layouts/MainLayout';
 
 
-import {EmailIcon, FacebookIcon, FacebookMessengerIcon, HatenaIcon, InstapaperIcon,
-  LineIcon,
-  LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
-  PinterestIcon,
-  PocketIcon,
-  RedditIcon,
-  TelegramIcon,
-  TumblrIcon,
-  TwitterIcon,
-  ViberIcon,
-  VKIcon,
-  WeiboIcon,
-  WhatsappIcon,
-  WorkplaceIcon
-} from "react-share";
-
-
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  HatenaShareButton,
-  InstapaperShareButton,
-  LineShareButton,
-  LinkedinShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  OKShareButton,
-  PinterestShareButton,
-  PocketShareButton,
-  RedditShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
-  TwitterShareButton,
-  ViberShareButton,
-  VKShareButton,
-  WhatsappShareButton,
-  WorkplaceShareButton
-} from "react-share";
+import {FacebookIcon,LinkedinIcon,TwitterIcon } from "react-share";
+import {FacebookShareButton,LineShareButton,TwitterShareButton } from "react-share";
+//import Products from './Products';
 
 
 
@@ -134,10 +95,11 @@ onClick={() => document.documentElement.classList.remove('dark')}>
 {/*  ({ product.rating.rate})  */}  
   <Rating 
   className='pt-2 mr-2'  
-  //initialRating={product && product.rating.rate} 
+  initialRating={5}
+  //initialRating={Product.rating.rate} 
   fullSymbol={yellowStar}
    emptySymbol={greyStar}
-//readonly={true}
+   readonly={true}
     />
     {/* <p className='text-gray-400' > ({product.rating.count} reviews) </p>  */}
 </div>

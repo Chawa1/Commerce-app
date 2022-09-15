@@ -1,7 +1,8 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { useState, Fragment , useEffect} from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useState, useEffect} from 'react';
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { logout } from '../app/slices/authSlice';
 
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'; //ama bo active boni page aka bakar denin
@@ -18,17 +19,17 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const location = useLocation();
+  const auth = useSelector((state) => state.auth); /*  */
+  const dispatch = useDispatch();
 
-  const auth = useSelector((state) => state.auth.isAuthenticated); /*  */
 
-
-   const [navigation, setNavigation] = useState([
+   const [navigation] = useState([
     { name: 'Home', href: '/', current: true },
     { name: 'Products', href: '/Products', current: false },
-    { name: 'Categories', href: '/Categories', current: false },
-    { name: 'Feedback', href: '/Feedback', current: false },
-    { name: 'Form', href: '/Form', current: false },
-    { name: 'About', href: '/About', current: false },
+   /*  { name: 'Categories', href: '/Categories', current: false }, */
+  /*   { name: 'Feedback', href: '/Feedback', current: false }, */
+   /*  { name: 'Form', href: '/Form', current: false }, */
+   /*  { name: 'About', href: '/About', current: false }, */
 
   //]
   ]); 
@@ -54,7 +55,9 @@ export default function Navbar() {
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                </Disclosure.Button>
+                </Disclosure.Button> 
+
+
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
@@ -135,7 +138,7 @@ localStorage.setItem('language', 'ku');
                       </svg>
 
 
-              {auth.isAuthenticated ? 
+              {auth ?
 
                 <Link  /* button aka akain ba Link */
                   to='/login' /* ka click man lekrd bman bat bo page Login */
@@ -143,17 +146,17 @@ localStorage.setItem('language', 'ku');
                   focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500" 
                 >
                   <span className="sr-only">View notifications</span>
-                  Logout {/* agar daxl bbo allet logout */}
-                
+                  login {/* agar daxl bbo allet logout */}
+                 {/*  onClick={() => dispatch(logout())} */}
                 </Link> :
               
 
                 <Link  /* button aka akain ba Link */
                 to='/login' /* ka click man lekrd bman bat bo page Login */
                 className="bg-indigo-900 p-1 rounded-full  text-white px-4  hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:bg-indigo-500"
-              >
+             >
                 <span className="sr-only">View notifications</span>
-                Login {/* agal daxl nabbo allet login bka  */}
+                logout {/* agal daxl nabbo allet login bka  */}
               
               </Link>}
                 
