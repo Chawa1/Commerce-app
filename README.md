@@ -1,4 +1,28 @@
+Create app for online shoping
+
+# Pages:
+
+.Home
+.categories
+.Products
+.Product
+.login
+
+# Components:
+
+.Navbar
+.Footer
+
+# Dependencies
+
+. Tailwind CSS
+. Redux Toolkit(RTK)
+. Axios
+. React Router
+
 install :
+npm i axios
+npm i react-router-dom
 npm install react-responsive-carousel --save
 npm i react-responsive-carousel
 npm install --save react-rating
