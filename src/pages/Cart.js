@@ -2,7 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 export default function Cart() {
+  // eslint-disable-next-line
 const [cart, setCart] = useState();
+// eslint-disable-next-line
 const [isLoading, setIsLoading] = useState();
 
 useEffect(() => {  

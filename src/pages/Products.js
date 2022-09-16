@@ -20,7 +20,7 @@ export default function Products( ) {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(4); // 4 product la har page ka
+  const [itemsPerPage] = useState(4); // 4 product la har page ka
 
 
   //bo style pagination
@@ -85,7 +85,11 @@ if(products){
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   setCurrentItems(products.slice(itemOffset, endOffset));
-  setPageCount(Math.ceil(products.length / itemsPerPage)); 
+  setPageCount(Math.ceil(products.length / itemsPerPage));
+  /* const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  setCurrentItems(products.slice(itemOffset, endOffset));
+  setPageCount(Math.ceil(products.length / itemsPerPage));  */
 }
   }, []);
 
