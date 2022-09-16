@@ -6,9 +6,8 @@ import Rating from 'react-rating';
 import MainLayout from '../layouts/MainLayout';
 
 
-import {FacebookIcon,LinkedinIcon,TwitterIcon } from "react-share";
-import {FacebookShareButton,LineShareButton,TwitterShareButton } from "react-share";
-//import Products from './Products';
+//import {FacebookIcon,LinkedinIcon,TwitterIcon } from "react-share";
+//import {FacebookShareButton,LineShareButton,TwitterShareButton } from "react-share";
 
 
 
@@ -116,7 +115,7 @@ onClick={() => document.documentElement.classList.remove('dark')}>
   </div>
 
 {/* for adding social media link */}
-<div>
+{/* <div>
   <TwitterShareButton 
    url={window.location.href}
    title="example title" 
@@ -135,9 +134,7 @@ url={window.location.href}>
 url={window.location.href}>
   <FacebookIcon size={32} round={true}/>
 </FacebookShareButton>
-
-
-</div>
+</div> */}
 
 </div>
 

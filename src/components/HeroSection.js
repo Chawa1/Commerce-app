@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCarousel from './ReactCarousel';
 import { useTranslation } from 'react-i18next';
-//import Products from '../pages/Products';
+
 
 export default function HeroSection() {
   const { t } = useTranslation('common');
@@ -17,18 +17,16 @@ export default function HeroSection() {
        <p className="text-2xl text-gray-500 mt-3">{t('welcome.subtitle')}</p> 
 
       <div className="mt-10">
-        <button
-        className="shadow-md hover:shadow-lg bg-indigo-900 text-white px-6 py-4 rounded-lg text-xl 
-        font-semibold mr-4"
-        
+      <button className="shadow-md hover:shadow-lg bg-indigo-600 text-white px-6 py-4 rounded-lg text-xl font-semibold mr-4"
         >
-          View Products
-        </button>
-        <button className="shadow-md hover:shadow-lg bg-white text-indigo-900 px-6 py-4 rounded-lg text-xl font-semibold">
-          View Categories
-        </button>
+            View Products
+          </button>
+          <button className="shadow-md hover:shadow-lg bg-white text-indigo-600 px-6 py-4 rounded-lg text-xl font-semibold">
+            View Categories
+          </button>
       </div>
     </div>
+
     <div className="">
       {/*  <img
         className="h-full w-auto object-cover"
